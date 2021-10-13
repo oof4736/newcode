@@ -1,0 +1,88 @@
+import java.util.*;
+public class Main{
+    
+    double objectLength, objectWidth, objectArea;
+    final double pi = 3.1415926535;
+    int option = 0;
+    Scanner s = new Scanner(System.in);
+    
+	public static void main(String[] args){
+	    Main a = new Main();
+	    a.ask();
+	}
+	
+	public double findCircleArea(){
+	    System.out.println("what is the radius?");
+	    objectLength = this.s.nextDouble();
+	    objectArea = pi * (objectLength * objectLength);
+	    return(objectArea);
+	}
+	
+	public double findRegularQuadArea(){
+	    if (option == 2){
+	        System.out.println("what is the length of the square?");
+	        objectLength = this.s.nextDouble();
+	        objectArea = objectLength * objectLength;
+	        return(objectArea);
+	    }
+	    else{
+	        System.out.println("what is the length of the rectangle?");
+	        objectLength = this.s.nextDouble();
+	        System.out.println("what is the width of the rectangle?");
+	        objectWidth = this.s.nextDouble();
+	        objectArea = objectWidth * objectLength;
+	        return(objectArea);
+	    }
+	}
+
+	public double findCubeVolume(){
+	    System.out.println("what is the length of the cube?");
+	    objectLength = this.s.nextDouble();
+	    objectArea = objectLength * objectLength * objectLength;
+	    return(objectArea);
+	}
+	
+	public void printArea(){
+	    System.out.println(objectArea);
+	}
+	
+	public void ask1(){
+	    System.out.println("menu:");
+	    System.out.println("circle: 1");
+	    System.out.println("square: 2");
+	    System.out.println("rectangle: 3");
+	    System.out.println("cube: 4");
+	    System.out.println("quit: -1");
+	    option = this.s.nextInt();
+    }
+
+	public void ask(){
+
+	    while(option != -1){
+	        
+	        ask1();
+	        if (option == 1){
+	            findCircleArea();
+	        }
+	        
+	       else  if (option == 2){
+	            findRegularQuadArea();
+	            
+	        }
+	        
+	        else if (option == 3){
+	            findRegularQuadArea();
+	            
+	        }
+	        
+	        else if(option == 4){
+	            findCubeVolume();
+	        }
+	        
+	        else{
+	            break;
+	        }
+	        printArea();
+	    }
+	}
+}
